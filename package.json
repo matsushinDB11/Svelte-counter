@@ -13,6 +13,12 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@tsconfig/svelte": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-svelte3": "^3.4.1",
     "husky": ">=6",
     "lint-staged": ">=10",
     "prettier": "^2.6.2",
@@ -25,12 +31,16 @@
     "svelte": "^3.0.0",
     "svelte-check": "^2.0.0",
     "svelte-preprocess": "^4.0.0",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "typescript": "^4.6.3"
   },
   "dependencies": {
     "sirv-cli": "^2.0.0"
   },
   "lint-staged": {
-    "*.{js,ts,svelte,css,md}": "prettier --write"
+    "*.{js,ts,svelte,css,md}": [
+      "prettier --write",
+      "eslint --fix --quiet"
+    ]
   }
 }
