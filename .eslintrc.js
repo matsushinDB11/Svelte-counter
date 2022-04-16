@@ -25,10 +25,8 @@ module.exports = {
       processor: 'svelte3/svelte3',
     },
   ],
-  rules: {
-    // ...
-  },
   settings: {
     'svelte3/typescript': () => require('typescript'), // pass the TypeScript package to the Svelte plugin
   },
 };
+// 参考: https://github.com/sveltejs/eslint-plugin-svelte3
