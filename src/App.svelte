@@ -1,12 +1,16 @@
 <script lang="ts">
-  export let name: string;
+  // export let name: string;
+  import { Styles, Button } from 'sveltestrap';
+  import Counter from './components/counter.svelte';
 </script>
 
+<Styles />
+
 <main>
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.
-  </p>
+  <h1>Svelte Counter App</h1>
+  <div>
+    <Counter />
+  </div>
 </main>
 
 <style>
