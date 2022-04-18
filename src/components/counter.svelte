@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Button, Card, CardBody, Input } from 'sveltestrap';
 
-  let count = 0;
+  export let title = '';
+  export let count = 0;
   function incrementCount(): void {
     count += 1;
   }
@@ -15,7 +16,7 @@
 
 <Card>
   <CardBody>
-    <Input style="width: 400px" />
+    <Input style="width: 400px" bind:value={title} placeholder="input counter title" />
     {count}
 
     <Button color="success" on:click={incrementCount}>+</Button>

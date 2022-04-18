@@ -1,16 +1,36 @@
 <script lang="ts">
   // export let name: string;
-  import { Styles, Button } from 'sveltestrap';
+  import { Styles } from 'sveltestrap';
   import Counter from './components/counter.svelte';
+
+  type TCounter = {
+    id: number;
+    title: string;
+    count: number;
+  };
+
+  let counterList: TCounter[] = [{ id: 0, title: '', count: 0 }];
+  let nextId = 1;
+
+  function add(): void {
+    counterList.concat({ id: nextId, title: '', count: 0 });
+    nextId += 1;
+  }
+
+  function remove(): void {
+    counterList = counterList.slice(1);
+  }
 </script>
 
 <Styles />
 
 <main>
   <h1>Svelte Counter App</h1>
-  <div>
-    <Counter />
-  </div>
+  {#each counterList as counter}
+    <div>
+      <Counter {...counter} />
+    </div>
+  {/each}
 </main>
 
 <style>
