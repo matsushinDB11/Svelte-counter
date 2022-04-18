@@ -1,24 +1,22 @@
 <script lang="ts">
-  // export let name: string;
   import { Button, Styles } from 'sveltestrap';
   import Counter from './components/counter.svelte';
 
+  // TODO この型いる？
   type TCounter = {
     id: number;
-    title: string;
-    count: number;
   };
 
-  let counterList: TCounter[] = [{ id: 0, title: '', count: 0 }];
+  let counterList: TCounter[] = [{ id: 0 }];
   let nextId = 1;
 
   function add(): void {
-    counterList = counterList.concat({ id: nextId, title: '', count: 0 });
+    counterList = counterList.concat({ id: nextId });
     nextId += 1;
   }
 
-  function remove(): void {
-    counterList = counterList.slice(1);
+  function remove(event: CustomEvent<{ id: number }>): void {
+    counterList = counterList.filter((counterList) => counterList.id != event.detail.id);
   }
 </script>
 
@@ -26,9 +24,9 @@
 
 <main>
   <h1>Svelte Counter App</h1>
-  {#each counterList as counter}
+  {#each counterList as counter (counter.id)}
     <div>
-      <Counter {...counter} />
+      <Counter id={counter.id} on:remove={remove} />
     </div>
   {/each}
 
@@ -52,7 +50,7 @@
 
   @media (min-width: 640px) {
     main {
-      max-width: none;
+      max-width: 1000px;
     }
   }
 </style>
