@@ -1,6 +1,6 @@
 <script lang="ts">
   // export let name: string;
-  import { Styles } from 'sveltestrap';
+  import { Button, Styles } from 'sveltestrap';
   import Counter from './components/counter.svelte';
 
   type TCounter = {
@@ -13,7 +13,7 @@
   let nextId = 1;
 
   function add(): void {
-    counterList.concat({ id: nextId, title: '', count: 0 });
+    counterList = counterList.concat({ id: nextId, title: '', count: 0 });
     nextId += 1;
   }
 
@@ -31,6 +31,8 @@
       <Counter {...counter} />
     </div>
   {/each}
+
+  <Button block color="info" on:click={add}>new counter</Button>
 </main>
 
 <style>
