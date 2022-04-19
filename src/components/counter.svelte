@@ -24,7 +24,7 @@
 <Card>
   <CardBody>
     <Input style="width: 400px" bind:value={title} placeholder="input counter title" />
-    {count}
+    <span>{count}</span>
     <Button color="success" on:click={incrementCount}>+</Button>
     <Button color="danger" on:click={decrementCount}>-</Button>
     <Button color="warning" on:click={reset}>0</Button>
