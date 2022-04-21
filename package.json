@@ -12,6 +12,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.3.2",
     "@tsconfig/svelte": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
@@ -31,6 +32,7 @@
     "svelte": "^3.0.0",
     "svelte-check": "^2.0.0",
     "svelte-preprocess": "^4.0.0",
+    "sveltestrap": "^5.9.0",
     "tslib": "^2.0.0",
     "typescript": "^4.6.3"
   },
@@ -38,7 +40,7 @@
     "sirv-cli": "^2.0.0"
   },
   "lint-staged": {
-    "*.{js,ts,svelte,css,md}": [
+    "*.{js,ts,svelte,css}": [
       "prettier --write",
       "eslint --fix --quiet"
     ]
