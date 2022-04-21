@@ -40,7 +40,7 @@
     "sirv-cli": "^2.0.0"
   },
   "lint-staged": {
-    "*.{js,ts,svelte,css,md}": [
+    "*.{js,ts,svelte,css}": [
       "prettier --write",
       "eslint --fix --quiet"
     ]
