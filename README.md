@@ -15,6 +15,7 @@ Svelteの学習で開発したアプリケーション
 - Windows10 Education 21H2
 - Ubuntu20.04LTS(WSL)
 - Node.js 14.18.1 [nvm](https://github.com/nvm-sh/nvm) の使用を推奨。
+- yarn 1.22.17
 
 ## Get started
 
