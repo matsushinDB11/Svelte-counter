@@ -20,9 +20,9 @@
     counterList = counterList.filter((counterList) => counterList.id != event.detail.id);
   }
 
-  function sumOfCounter(CounterList: TCounter[]): number {
-    return CounterList.map((counter) => counter.count).reduce((prev, curr) => prev + curr, 0);
-  }
+  $: sumOfCounter = counterList.reduce((sum, curr) => sum + curr.count, 0);
+
+  $: titleList = counterList.map((counter) => counter.title).join();
 </script>
 
 <Styles />
@@ -36,12 +36,9 @@
 
   <Button block color="info" on:click={add}>new counter</Button>
   <p>
-    title list:
-    {#each counterList as counter}
-      {counter.title},
-    {/each}
+    title list: {titleList}
   </p>
-  <p>sum of count: {sumOfCounter(counterList)}</p>
+  <p>sum of count: {sumOfCounter}</p>
 </main>
 
 <style>
